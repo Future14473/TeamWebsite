@@ -1,5 +1,4 @@
 var slideIndex = 0;
-var numImgs = 4;
 var prevIndex;
 
 
@@ -24,9 +23,11 @@ function carousel() {
   var x = document.getElementsByClassName("slideItem");
  
   for (i = 0; i < x.length; i++) { // hides all images
-    x[i].style.opacity = "none";
+    x[i].style.display = "none";
+
     x[i].classList.remove('slide-in-left');
     x[i].style.zIndex = "0";
+  
   }
   slideIndex++;
   
@@ -49,15 +50,15 @@ function carousel() {
   } else {
     prevIndex = slideIndex - 1;
   }
-  console.log(slideIndex, prevIndex, slideIndex);
-  
-  console.log(x[prevIndex])
+ 
+
   x[prevIndex].style.display = "block";
   x[prevIndex].style.zIndex = "0";
 
-  fadeIn(x,slideIndex);
 
-  
+
+  fadeIn(x,slideIndex);
+  fadeOut(x,prevIndex);
   setTimeout(carousel, 2000); // Change image every 2 seconds
   
 }
