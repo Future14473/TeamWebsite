@@ -38,7 +38,7 @@ function carousel() {
   x[slideIndex].style.display = "block";
   x[slideIndex].style.zIndex = "1";
 
-  // logic ot prevent outOfRange exceptions
+  // logic to prevent outOfRange exceptions
   if (slideIndex == 0) {
     prevIndex = 3;
   } else {
